@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method='POST' action='/places'>
+    <fieldset>
+    <legend>New Restaurant</legend>
+    <!-- TITLE -->
+    <p>
+        <label for='name'>Name</label><br>
+        <input type='text' name='name' />
+    </p>
+    <p>
+        <label for='rating'>Rate this restaurant out of 5 stars</label><br>
+        <input type='number' name='rating'min='0' max='5' />
+    </p>
+    <p>
+        <label for='price'> How expensive is it?</label> <br>
+        <select name='price'> 
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+            <option value="$$$$">$$$$</option>
+            <option value="$$$$$">$$$$$</option>
+        </select>
+    </p>
+    </fieldset>
+
+    <!-- BUTTON -->
+    <p>
+        <button type='submit'>Save Restaurant</button>
+    </p>
+</form>
+{% endblock %}
