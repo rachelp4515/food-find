@@ -2,32 +2,43 @@
 
 {% block content %}
 <form method='POST' action='/places'>
-    <fieldset>
-    <legend>New Restaurant</legend>
-    <!-- TITLE -->
-    <p>
-        <label for='name'>Name</label><br>
-        <input type='text' name='name' />
-    </p>
-    <p>
-        <label for='rating'>Rate this restaurant out of 5 stars</label><br>
-        <input type='number' name='rating'min='0' max='5' />
-    </p>
-    <p>
-        <label for='price'> How expensive is it?</label> <br>
-        <select name='price'> 
-            <option value="$">$</option>
-            <option value="$$">$$</option>
-            <option value="$$$">$$$</option>
-            <option value="$$$$">$$$$</option>
-            <option value="$$$$$">$$$$$</option>
-        </select>
-    </p>
-    </fieldset>
+   <fieldset>
+    <legend class="ml-5">New Restaurant</legend>
 
-    <!-- BUTTON -->
-    <p>
-        <button type='submit'>Save Restaurant</button>
-    </p>
+    <div class="card m-5 p-5" style="width: fit-content;">
+        <p>
+            <label for='name'>Name of restaurant</label>
+            <input type='text' name='name' class="border-light ml-3" />
+        </p>
+        <p>
+            <label for='rating'>Rate this restaurant out of 5 stars</label>
+            <input type='number' name='rating'min='0' max='5' class="border-light ml-3" >
+        </p>
+        <p>
+            <label for='price'> How expensive is it?</label> 
+            <select class="custom-select" name='price' class="border-light ml-3"> 
+                <option value="$">$</option>
+                <option value="$$">$$</option>
+                <option value="$$$">$$$</option>
+                <option value="$$$$">$$$$</option>
+                <option value="$$$$$">$$$$$</option>
+            </select>
+        </p>
+
+        <p>
+            <label for='date'> When did you go? </label>
+            <input type="date" name="date" id="date">
+        </p>
+        <p>
+            <label for="desc"> How was the experience? Leave a short description here. </label>
+            <input type="text" name="desc" id="desc">
+         </p>   
+        </fieldset>
+         
+        <!-- BUTTON -->
+        <p>
+            <button type='submit' class="btn btn-light ml-5 border border-dark">Save Restaurant</button>
+        </p>
+    </div>
 </form>
 {% endblock %}

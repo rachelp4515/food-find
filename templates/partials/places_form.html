@@ -1,0 +1,32 @@
+   
+<div class="m-5">
+   <p>
+        <label for='name'>Where did you go?</label><br>
+        <input type='text' name='name' value="{{ place.name }}" />
+    </p>
+    <p>
+        <label for='rating'>Rate this restaurant out of 5 stars</label>
+        <input type='number' name='rating'min='0' max='5' value="{{ place.rating }}"/>
+    </p>
+    <p>
+        <label for='price'> How expensive is it?</label> <br>
+        <select class="custom-select" name='price' value="{{ place.price }}"> 
+            <option value="$">$</option>
+            <option value="$$">$$</option>
+            <option value="$$$">$$$</option>
+            <option value="$$$$">$$$$</option>
+            <option value="$$$$$">$$$$$</option>
+        </select>
+    </p>
+    <p>
+        <label for='date'> When did you go? </label>
+        <input type="date" name="date" id="date" value="{{ place.date }}">
+    </p>
+    <p>
+        <label for="desc"> Update your experience description. </label>
+        <input type="text" name="desc" id="desc">
+    </p> 
+    </fieldset>
+</div>
+<!-- BUTTON -->
+

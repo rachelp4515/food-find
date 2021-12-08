@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='row'>
+    <div class='col-sm-6 col-sm-offset-3'>
+        <h2> Edit {{ place.name }}</h2>
+        <form method='POST' action='/places/{{place._id}}'>
+            <input type='hidden' name='_method' value='PUT'/>
+            {% include 'partials/places_form.html' %}
+            <p>
+                <button type='submit' class="ml-5 btn btn-success">Save Restaurant</button>
+            </p>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,10 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h2> places </h2>
-    {% for place in places %}
-    <h4> {{ place.name }}</h4>
-    <h4> {{ place.rating }}</h4>
-    <h4> {{ place.price }}</h4>
-    {% endfor %}
+    <h2 class="text-center"> Restaurants </h2>
+<div class="d-flex flex-wrap">
+        {% for place in places %}
+            <card class="card border border-2 p-3 m-2 " style="width: fit-content;"> 
+                <a href="/places/{{ place._id }}"><h4 class="card-title"> {{ place.name }}</h4></a>
+            <div class="card-text">
+                <h3> {{ place.rating }} /5 stars</h3>
+                <h3> Price: {{ place.price }}</h3>
+                <h4> Date you visited: {{ place.date }}</h4>
+            </div>
+            </card>
+        {% endfor %}
+</div>
 {% endblock %}

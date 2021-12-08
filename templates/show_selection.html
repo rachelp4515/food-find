@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    {% for place in selected %}
+            <h2 class="text-center text-success p-2"> We've picked a place out just for you. </h2>
+            <p class="text-center" style="font-size:x-large;"> The restaurant is <em>{{ place.name }}</em>. <br>
+                It's rated {{ place.rating }} /out of 5 stars, and lands around {{ place.price }} 
+                on the price scale.
+                You originally visisted on {{ place.date }}.</h4>
+            </p>
+            <h3 class="text-center text-success p-2"> Your description about {{ place.name }}</h3>
+            <p class="text-center p-2" style="font-size:large;">
+                <em>"
+                {{ place.desc }}
+                "</em>
+            </p>
+            
+            
+            <hr>
+            <p class="text-center p-2" style="font-size:larger;">
+                <em> Not quite satisfied with the selection?</em><br> <a href="{{ url_for('show_selection') }}"><button class="btn btn-success m-3">Give it another go.</button></a></a>
+            </p>
+    {% endfor %}
+
+{% endblock %}
