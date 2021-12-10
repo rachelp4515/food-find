@@ -66,7 +66,7 @@ def update_place(place_id):
         {'_id': ObjectId(place_id)},
         {'$set': updated_place}
     )
-    return redirect(url_for('show_places', place_id=place_id))
+    return redirect(url_for('show_place', place_id=place_id))
 
 
 #---------------------- / delete it
