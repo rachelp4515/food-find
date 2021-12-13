@@ -17,8 +17,27 @@
     </div>
 </div>
 
+<div class="m-5">
+ {% include 'partials/comment_form.html' %}
+    {% if comments|length > 0 %}
+        <h4>Previous comments</h4>
+        <p>
+        {% for comment in comments %}
+        <div class='card p-4' style="width: fit-content;">
+            <div class='card-block'>
+                <p class='card-text'>{{ comment.comment }}</p>
+                <p class="text-muted">{{comment.created_date.strftime("%Y-%m-%d")}}</p>
+            </div>
+        </div>
+        {% endfor %}
+        </p>
+    {% else %}
+        <h4>No Commments yet.</h4>
+    {% endif %}
 
 
+</div>
+<!-- BUTTONS -->
 <div class="text-center d-flex justify-content-center p-3">
     <p>
         <button class="btn btn-success  m-2"> <a class='text-light' href='/places/{{ place._id }}/edit'>Edit Restaurant </a></button>
